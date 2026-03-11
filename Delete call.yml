@@ -1,0 +1,27 @@
+info:
+  name: Delete call
+  type: http
+  seq: 2
+
+http:
+  method: DELETE
+  url: https://dummyjson.com/products/1
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code should be 200", () => {
+          expect(res.status).to.equal(200);
+        });
+
+        test("Response should not be empty", () => {
+          expect(res.body.length).to.be.greaterThan(0);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
