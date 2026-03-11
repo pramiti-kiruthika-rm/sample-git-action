@@ -1,0 +1,21 @@
+info:
+  name: Post call
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://dummyjson.com/products/add
+  body:
+    type: json
+    data: |-
+      {
+        "Name": "Sample dataset created"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
