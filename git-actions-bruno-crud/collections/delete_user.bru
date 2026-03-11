@@ -1,8 +1,15 @@
-request {
+meta {
   name: "Delete User"
+}
+
+request {
   method: DELETE
   url: "{{baseUrl}}/users/1"
   headers: {
     "Accept": "application/json"
   }
+}
+
+tests {
+  expect response.status == 200
 }
