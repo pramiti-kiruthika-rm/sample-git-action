@@ -17,4 +17,4 @@ jobs:
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
       - name: Run Bruno collection
-        run: bruno run collections/bruno.json --env environments/ci.bru
+        run: bru run collections --env environments/ci.bru
