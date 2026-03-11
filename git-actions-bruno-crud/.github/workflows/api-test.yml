@@ -17,4 +17,4 @@ jobs:
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
       - name: Run Bruno API Tests
-        run: bru run collections --env ci --reporter-html results.html
+        run: bru run git-actions-bruno-crud/tests --env ci --reporter-html results.html
