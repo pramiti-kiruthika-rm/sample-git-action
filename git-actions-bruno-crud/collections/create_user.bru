@@ -1,0 +1,12 @@
+request {
+  name: "Create User"
+  method: POST
+  url: "{{baseUrl}}/users"
+  headers: {
+    "Content-Type": "application/json"
+  }
+  body: {
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+}

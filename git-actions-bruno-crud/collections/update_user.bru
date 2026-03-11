@@ -1,0 +1,12 @@
+request {
+  name: "Update User"
+  method: PUT
+  url: "{{baseUrl}}/users/1"
+  headers: {
+    "Content-Type": "application/json"
+  }
+  body: {
+    "name": "John Updated",
+    "email": "john.updated@example.com"
+  }
+}

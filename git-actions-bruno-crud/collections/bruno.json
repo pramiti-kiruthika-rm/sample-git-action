@@ -1,0 +1,9 @@
+{
+  "name": "Sample Bruno Collection",
+  "requests": [
+    { "file": "get_users.bru" },
+    { "file": "create_user.bru" },
+    { "file": "update_user.bru" },
+    { "file": "delete_user.bru" }
+  ]
+}
