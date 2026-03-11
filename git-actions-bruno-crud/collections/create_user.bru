@@ -1,5 +1,8 @@
-request {
+meta {
   name: "Create User"
+}
+
+request {
   method: POST
   url: "{{baseUrl}}/users"
   headers: {
@@ -9,4 +12,8 @@ request {
     "name": "John Doe",
     "email": "john@example.com"
   }
+}
+
+tests {
+  expect response.status == 201
 }
