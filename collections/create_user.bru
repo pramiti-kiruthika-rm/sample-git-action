@@ -1,9 +1,21 @@
-post http://{{baseUrl}}/users
-Content-Type: "application/json"
+meta {
+  name: "Create User"
+}
 
-body {
-  "name": "test user",
-  "email": "test@example.com"
+request {
+  method: POST
+  url: "{{baseUrl}}/users"
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "John",
+    "email": "john@example.com"
+  }
 }
 
 tests {
