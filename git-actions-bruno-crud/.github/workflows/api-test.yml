@@ -1,20 +1,30 @@
-name: Bruno API Test
+name: Bruno API Tests
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  bruno-api-test:
+  run-api-tests:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
-      - name: Run Bruno API Tests
-        run: bru run git-actions-bruno-crud/tests --env ci --reporter-html results.html
+
+      - name: Run Tests
+        run: bru run \.collections --env ci --reporter-html results.html
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bruno-report
+          path: results.html
