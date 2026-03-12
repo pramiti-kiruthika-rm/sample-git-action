@@ -1,9 +1,5 @@
 {
-  "name": "Bruno API Collection",
-  "requests": [
-    { "file": "create_user.bru" },
-    { "file": "delete_user.bru" },
-    { "file": "get_users.bru" },
-    { "file": "update_user.bru" }
-  ]
+  "name": "crud-api-tests",
+  "type": "collection",
+  "version": "1"
 }
