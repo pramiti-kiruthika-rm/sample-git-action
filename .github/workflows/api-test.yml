@@ -23,7 +23,7 @@ jobs:
       run: npm install -g @usebruno/cli
     
     - name: Run API Tests
-      run: bru run --env ci --reporter-html results.html
+     run: bru run collections/bruno.json --env ci --reporter-html results.html
     
     - name: Check files
       run: ls -la
@@ -31,5 +31,5 @@ jobs:
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
+        name: bruno-report
         path: results.html

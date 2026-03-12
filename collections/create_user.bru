@@ -1,0 +1,19 @@
+meta {
+  name: "Create User"
+}
+
+request {
+  method: POST
+  url: "{{baseUrl}}/users"
+  headers: {
+    "Content-Type": "application/json"
+  }
+  body: {
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+}
+
+tests {
+  expect response.status == 201
+}
